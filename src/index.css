@@ -1,13 +1,140 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+}
+*::-webkit-scrollbar{
+    width: 10px;
+}
+.root{
+    width: 100%;
+    height: 100vh;
+    background-image:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url("./Photos//metflix.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 2px solid white;
+}
+navbar{
+    display: flex;
+    justify-content: space-between;
+    color: wheat;
+    padding: 2rem 10rem;
+}
+navbar span{
+    font-size: 35px;
+    color: red;
+    font-weight: 700;
+}
+navbar button{
+    padding: .2rem .8rem;
+    color: white;
+    border-radius: 3px;
+    margin: 0px 1rem;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    background-color: red;
+}
+.navlink{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+navbar .navlink ol{
+    display: flex;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+navbar .navlink ol li{
+    display: flex;
+    flex-direction: row;
+    margin: 0px 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+}
+/* home tyext and input button */
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    flex-direction: column;
+    text-align: center;
+}
+main h1{
+    font-size: 3em;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+main span{
+    color: white;
+text-align: center;
+padding: 2rem 0rem;
+font-size: 20px;
+margin-top: 1rem;
+}
+main .get_started{
+width: 100%;
+    margin: 1rem 0rem;
+    display: flex;
+}
+main input{
+    background-color: rgb(106, 104, 104);
+    padding: .6rem 2rem;
+    margin: 0 1rem;
+    color: white;
+    display: block;
+    outline: none;
+    border: none;
+       
+}
+.get_started button{
+    padding: .6rem 2rem;
+    color: white;
+    border-radius: 3px;
+    font-size: 22px;
+    outline: none;
+    border: none;
+    background-color: red;
+}
+/* movies css */
+.movies{
+ background: rgba(0,0,0,2);
+ padding: 1rem;
+}
+.movies .movies_bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movies .movies_bar h2{
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px 10px;
+}
+.movies .movies_bar span{
+    color: white;
+    font-size: 15px;
+    font-weight: 300;
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px 10px;
+    cursor: pointer;
+}
+.sliderimg{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    height: 200px;
+    margin: 2px 10px;
+}
+.sliderimg img{
+    width: 100%;
 }
