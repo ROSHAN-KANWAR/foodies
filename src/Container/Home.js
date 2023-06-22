@@ -1,36 +1,22 @@
 import React,{Fragment} from 'react'
-
+import Header from '../Components/Header';
+import Searchbox from "../Components/Searchbox"
+import Movies from "./Movies"
 function Home() {
+  //const mysate = useSelector((state)=>state.ChangeNumber)
   return (
     <Fragment>
    <div className='root'>
-   <navbar>
-   <div>
-   <span>Meflix</span>
-   </div>
-        <div className='navlink'>
-        <ol>
-        <li>Movies</li>
-        <li>Series</li>
-        <li>Trailer</li>
-        <li>Hollywood</li>
-        </ol>
-        <button>Sign in</button>
-        </div>
-   </navbar>
+ <Header/>
    <main>
    <div>
-   <h1>Unlimited movies, TV shows and more</h1>
-   <span>Watch anywhere. Cancel anytime.</span><br></br>
-  <span>Ready to watch? Enter your email to create or restart your membership.</span>
+   <h1>Unlimited Food, Reciepe,Dishes and more</h1>
+   <span>Cook anywhere. Ready anytime.</span><br></br>
+  <span>Ready to Cook? Enter your favorate food name or Reciepe and More</span>
    </div>
-   <div>
-   <div className='get_started'>
-   <input type="text" placeholder='Email address..'/>
-   <button>Get Stared</button>
-   </div>
-
-   </div>
+   <div className='searchs'>
+  <Searchbox/>
+ </div>
    </main>
    </div>
     </Fragment>

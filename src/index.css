@@ -11,50 +11,49 @@
 .root{
     width: 100%;
     height: 100vh;
-    background-image:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url("./Photos//metflix.jpg");
+    background-image:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url("./Photos//bh.jpg");
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+    border-bottom: 2px solid white;
+}
+.searchpage{
+    width: 100%;
+    background:#292727;
+   
     border-bottom: 2px solid white;
 }
 navbar{
     display: flex;
     justify-content: space-between;
     color: wheat;
-    padding: 2rem 10rem;
+    padding: 1rem 3rem;
+    align-items: center;
 }
+.navfix{
+    display: flex;
+    width: 100%;
+    background:#282727;
+    position:fixed;
+    z-index: 9999;
+    }
 navbar span{
-    font-size: 35px;
-    color: red;
-    font-weight: 700;
+   font-size: 40px;
+   font-weight: 700;
+   color: rgb(255, 255, 255);
+   box-shadow: 2px  2px 2px 3px rgb(255, 0, 0);
 }
 navbar button{
-    padding: .2rem .8rem;
+    padding: .3rem .9rem;
     color: white;
     border-radius: 3px;
     margin: 0px 1rem;
-    font-size: 15px;
+    font-size: 20px;
     outline: none;
     border: none;
     background-color: red;
 }
-.navlink{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-navbar .navlink ol{
-    display: flex;
-}
 
-navbar .navlink ol li{
-    display: flex;
-    flex-direction: row;
-    margin: 0px 1.2rem;
-    font-weight: 600;
-    cursor: pointer;
-    color: white;
-}
 /* home tyext and input button */
 main{
     display: flex;
@@ -77,30 +76,12 @@ padding: 2rem 0rem;
 font-size: 20px;
 margin-top: 1rem;
 }
-main .get_started{
-width: 100%;
-    margin: 1rem 0rem;
-    display: flex;
-}
-main input{
-    background-color: rgb(106, 104, 104);
-    padding: .6rem 2rem;
-    margin: 0 1rem;
-    color: white;
-    display: block;
-    outline: none;
-    border: none;
-       
-}
-.get_started button{
-    padding: .6rem 2rem;
-    color: white;
-    border-radius: 3px;
-    font-size: 22px;
-    outline: none;
-    border: none;
-    background-color: red;
-}
+main .searchs{
+width: 50%;
+}main .searchs button{
+    width: 30%;
+    }
+
 /* movies css */
 .movies{
  background: rgba(0,0,0,2);
@@ -137,4 +118,12 @@ main input{
 }
 .sliderimg img{
     width: 100%;
+}
+.fooddetail{
+    width: 100%;
+    height: 300px;
+}
+.fooddetail .img{
+   width: 100%;
+    height: 300px;
 }

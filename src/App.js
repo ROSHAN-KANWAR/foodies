@@ -1,14 +1,16 @@
 import React, { Fragment } from 'react'
-import Home from './Container/Home'
-import Movies from './Container/Movies'
+import Home from "./Container/Home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SearcheResult from "./Container/SearcheResult"
+import FoodDetail from "./Container/FoodDetail"
 function App() {
   return (
     <Fragment>
-   <Home/>
-   <Movies name="Trailer"/>
-   <Movies name="Web Series"/>
-   <Movies name="Movies"/>
-   <Movies name="Hollywood"/>
+     <Routes>
+          <Route path="/" exact element={<Home />} />
+            <Route exact path="/search-result" element={<SearcheResult />} />
+            <Route exact path="/food-detail/:id" element={<FoodDetail />} />
+      </Routes>
     </Fragment>
   )
 }

@@ -1,49 +1,60 @@
-import React, { Fragment } from 'react'
+import React, { Fragment,useEffect,useState } from 'react'
 import Carousel from "react-multi-carousel";
+import {Responsive} from "./Responsive"
 import "react-multi-carousel/lib/styles.css";
-import Imo from "../Photos/metflix.jpg"
+import Spinner from 'react-bootstrap/Spinner';
+import Card from 'react-bootstrap/Card';
+import axios from 'axios';
+import {useSelector,useDispatch} from "react-redux";
+import {RandomFetch} from "../Services/Action/Action"
 function MovieSlider() {
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 6
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 4
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 3
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 2
+  const distch = useDispatch();
+  const [loader, setloader] = useState(true)
+  const myrandom = useSelector((state)=>state.FetchRandom.randomData)
+    const myrandom1 = useSelector((state)=>state.FetchSEARCH.searchs)
+    useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      setloader(false)
+      const response = await axios.get('https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian');
+      distch(RandomFetch(response.data.meals));
+      setloader(true)
+    } catch (error) {
+      setloader(false)
+      console.error(error);
+    
     }
   };
+
   return (
-    <Fragment>
-    <Carousel responsive={responsive}>
-  <div className='sliderimg'>
-  <img src={Imo} alt="test" />
-  </div> 
-  <div className='sliderimg'>
-  <img src={Imo} alt="test" />
-  </div> 
-  <div className='sliderimg'>
-  <img src={Imo} alt="test" />
-  </div> 
-  <div className='sliderimg'>
-  <img src={Imo} alt="test" />
-  </div> 
-  <div className='sliderimg'>
-  <img src={Imo} alt="test" />
-  </div> 
-  <div className='sliderimg'>
-  <img src={Imo} alt="test" />
-  </div> 
-</Carousel>;
+    <Fragment> 
+    {
+      loader ?
+      <Carousel responsive={Responsive}>
+    {
+      myrandom.map((e)=>{
+        const{strMeal,strMealThumb} = e
+        return(
+          <>
+          <div className='sliderimg'>
+          <Card style={{ width: '16rem' }}>
+          <Card.Img variant="top" src={strMealThumb} />
+        </Card>
+          </div> 
+          </>
+        )
+      })
+     
+    }
+  </Carousel>
+      :
+      <Spinner animation="border" role="status">
+      <span className="visually-hidden">Loading...</span>
+    </Spinner>
+    }
     </Fragment>
   )
 }
