@@ -1,6 +1,8 @@
 import React,{Fragment,useState} from 'react'
 import  {signInWithEmailAndPassword, } from "firebase/auth"
 import {auth} from "../Config/firebase"
+
+import Header from "../Components/Header"
 import { Link,useNavigate } from 'react-router-dom'
 function Login() {
   const [user,setUser] = useState({
@@ -50,15 +52,11 @@ const PostData2=(e)=>{
   }
 }
   return (
-<div className='flex justify-center items-center max-w-7xl md:px-20 px-3 md:py-20 py-4'>
-<div className='w-1/2'>
-<div className="w-full bg-cover">
-        <div className="flex flex-col items-center justify-center w-full h-full relative lg:pr-10">
-          <img alt ="meesho signup" src="https://res.cloudinary.com/macxenon/image/upload/v1631570592/Run_-_Health_qcghbu.png" className="btn-"/>
-        </div>
-      </div>
-</div>
-<form method="post" className="py-6 w-1/2 md:px-20 px-2">
+    <Fragment>
+    <Header/>
+<div className='flex justify-center items-center  px-3 md:py-20 py-4'>
+
+<form method="post" className="py-6 md:px-20 px-2">
 <p className="w-full text-4xl font-medium text-center leading-snug font-serif">Sign In for an account</p>
         
 <div className="mt-4">
@@ -81,7 +79,7 @@ className=" text-gray-700 focus:outline-none focus:shadow-outline border border-
   loader ?
   <div className="relative">
   <button onClick={PostData2} type="submit"
-  className="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-pinkbase
+  className="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-primary
   rounded-lg">
   Login
   </button>  
@@ -95,13 +93,13 @@ className=" text-gray-700 focus:outline-none focus:shadow-outline border border-
  </div>
 
  <p className='text-sm mt-3 '>Have Not an Account
- <Link to="/signup">
+ <Link to="/register">
    <b>  Signup</b>
  </Link>
  </p>
 </form>
 </div>
-
+</Fragment>
   )
 }
 

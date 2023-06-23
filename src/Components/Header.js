@@ -17,12 +17,16 @@ window.addEventListener('scroll' ,Setfixed)
     <Fragment>
     <navbar className={fixed?'navfix':''}>
     <div>
-    <span>
-  <Link to="/">FOODIES</Link>
+    <span >
+  <Link to="/" className="text-danger bg-white">FOODIES</Link>
     </span>
     </div>
          <div className='navlink'>
-         <button>Sign in</button>
+         
+  <Link to="/register">
+<button>Sign in</button>
+         
+  </Link>
          </div>
     </navbar>
     </Fragment>
